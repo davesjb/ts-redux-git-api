@@ -1,14 +1,15 @@
 import "./App.css"
 
 import { ChakraProvider, Box, Text, Heading } from "@chakra-ui/react"
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react"
+// import { ApiProvider } from "@reduxjs/toolkit/dist/query/react"
+import { Provider } from "react-redux"
 import { authApi } from "./services/GitApi"
 import GitAuth from "./app/hooks/useGetGitUserQuery"
 import { store } from "./app/store"
 
 function App() {
   return (
-    <ApiProvider store={store}>
+    <Provider store={store}>
       <ChakraProvider>
         <div className="App">
           <GitAuth />
@@ -18,7 +19,7 @@ function App() {
           </Box>
         </div>
       </ChakraProvider>
-    </ApiProvider>
+    </Provider>
   )
 }
 

@@ -1,8 +1,8 @@
 import * as React from "react"
-import { useGetAccessToken } from "../../services/GitApi"
+import { useGetAccessTokenQuery } from "../../services/GitApi"
 
 export default function GitAuth() {
-  const { data, error, isLoading } = useGetAccessToken("user1")
+  const { data, error, isLoading } = useGetAccessTokenQuery("user1")
 
   console.log(data)
   return <></>
